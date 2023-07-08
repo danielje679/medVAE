@@ -27,7 +27,7 @@ class CombinedDataset(Dataset):
 
 
 def get_combined_dataset(names, split='train', batch_size=128, download=True):
-    datasets = [get_single_dataset(name=name, split=split, batch_size=batch_size, download=download) for name in names]
+    datasets = [get_single_dataset(name=name, split=split, batch_size=batch_size, download=download)[0] for name in names]
     combined_dataset = CombinedDataset(datasets)
     return combined_dataset
 
