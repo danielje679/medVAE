@@ -1,0 +1,25 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="statistical_methods.statistical_models.univariate_models" />
+          <option value="statistical_methods.statistical_models.SARIMAModel" />
+          <option value="statistical_methods.statistical_models.ARIMAModel" />
+          <option value="forecaster.forecaster.univariate_models" />
+          <option value="forecaster.forecaster.SARIMAModel" />
+          <option value="forecaster.forecaster.ARIMAModel" />
+          <option value="forecaster.model_test.univariate_models" />
+          <option value="forecaster.model_test.split_train_test" />
+          <option value="forecaster.model_test.collect_data" />
+          <option value="forecaster.model_test.ARIMAModel" />
+          <option value="forecaster.model_test.plot_results" />
+          <option value="forecaster.model_test.log_results" />
+          <option value="forecaster.model_test.save_results" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
