@@ -95,8 +95,8 @@ class ConditionalVAE(nn.Module):
         embedded_class = embedded_class.view(-1, self.img_size, self.img_size).unsqueeze(1)
         embedded_input = self.embed_data(x)
 
-        x = torch.cat([embedded_input, embedded_class], dim=1)
-        mu, log_var = self.encode(x)
+        x_comb = torch.cat([embedded_input, embedded_class], dim=1)
+        mu, log_var = self.encode(x_comb)
 
         z = self.reparameterize(mu, log_var)
         z = torch.cat([z, y], dim=1)
