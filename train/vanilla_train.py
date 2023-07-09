@@ -1,4 +1,7 @@
 from tqdm import tqdm
+import torch
+
+CHECKPOINTS = [1, 5, 10, 15, 20, 30, 40, 50]
 
 
 def vanilla_train_loop(num_epochs, model, optimizer, train_loader, device, kld_weights, reconstruction_sample):
@@ -43,5 +46,15 @@ def vanilla_train_loop(num_epochs, model, optimizer, train_loader, device, kld_w
         reconstruction_sample.to(device)
         x_reconst, x, mu, log_var = model(reconstruction_sample.cuda())
         reconstructed_images.append(x_reconst)
+
+        # saving the model
+        if epoch + 1 in CHECKPOINTS:
+            path = f'model_checkpoints/vanilla_model_{epoch + 1}.pt'
+            torch.save({
+                'epoch': epoch,
+                'model_state_dict': model.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+                'loss': avg_loss,
+            }, path)
 
     return loss_per_epoch, reconstructed_images, reconstruction_sample

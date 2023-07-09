@@ -1,6 +1,7 @@
 from tqdm import tqdm
 import torch
 
+CHECKPOINTS = [1, 5, 10, 15, 20, 30, 40, 50]
 
 def cond_train_loop(num_epochs, model, optimizer, train_loader, device, kld_weights, reconstruction_sample):
     loss_per_epoch = []
@@ -32,6 +33,16 @@ def cond_train_loop(num_epochs, model, optimizer, train_loader, device, kld_weig
         avg_loss = running_loss / len(train_loader)
         print(avg_loss)
         loss_per_epoch.append(avg_loss)
+
+        # saving the model
+        if epoch + 1 in CHECKPOINTS:
+            path = f'model_checkpoints/cond_model_{epoch + 1}.pt'
+            torch.save({
+                'epoch': epoch,
+                'model_state_dict': model.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+                'loss': avg_loss,
+            }, path)
 
         model.eval()
 
