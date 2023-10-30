@@ -29,7 +29,6 @@ The code is organized as follows:
 - `models`: model definitions for VanillaVAE and ConditionalVAE.
 - `train`: Contains scripts for training the models.
 - `utils`: Utility functions used throughout the project.
-- `main.py`: The main script to run the project.
 - `requirements.txt`: Lists project dependencies.
 - `train_and_evaluate.ipynb`: A Jupyter Notebook that provides a guide to training and evaluating the models.
 
