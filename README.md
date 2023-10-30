@@ -1,6 +1,6 @@
 # medVAE
 
-**medVAE** is a project that implements two different Variational Autoencoder (VAE) models: VanillaVAE and ConditionalVAE. The VanillaVAE is a standard VAE, while the ConditionalVAE incorporates a conditional label using data from the medMNIST dataset. This project focuses on medical image datasets, specifically ChestMNIST, OrganMNIST, and OCTMNIST, which share the same number of channels and consist of a substantial number of samples.
+**medVAE** is a project that implements two different Variational Autoencoder (VAE) models: VanillaVAE and ConditionalVAE. The VanillaVAE is a standard VAE, while the ConditionalVAE incorporates a conditional label using data from the [medMNIST](https://medmnist.com/) dataset. This project focuses on medical image datasets, specifically ChestMNIST, OrganMNIST, and OCTMNIST, which share the same number of channels and consist of a substantial number of samples.
 
 ## Project Overview
 - **Vanilla VAE**: Utilizes the ChestMNIST dataset.
@@ -43,4 +43,4 @@ The code is organized as follows:
 - The medVAE project was developed as part of the course *Deep Generative models*, at TU Darmstadt.
 
 ## Contact
-For any questions or inquiries regarding this project, please contact uni@danieljeckel.de.
+For any questions or inquiries regarding this project, please contact uni@danieljeckel.de or create an issue.
